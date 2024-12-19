@@ -55,7 +55,7 @@ groupadd -g ${GID_CHROME} google-chrome
 dnf5 install -y google-chrome-stable
 
 # This places the Google Chrome contents in an image safe location
-mv /var/opt/google-chrome-stable /usr/lib/google-chrome-stable # move this over here
+# mv /var/opt/google-chrome-stable /usr/lib/google-chrome-stable # move this over here
 
 # Register path symlink
 # We do this via tmpfiles.d so that it is created by the live system.
