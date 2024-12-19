@@ -21,6 +21,9 @@ RELEASE="$(rpm -E %fedora)"
 
 systemctl enable podman.socket
 
+echo "working-directory"
+pwd
+
 # install 1Password repo
 ./1password.sh
 
