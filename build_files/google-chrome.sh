@@ -52,15 +52,15 @@ GID_CHROME="1800"
 groupadd -g ${GID_CHROME} google-chrome
 
 # Now let's install the packages.
-dnf5 install -y google-chrome
+dnf5 install -y google-chrome-stable
 
 # This places the Google Chrome contents in an image safe location
-mv /var/opt/google-chrome /usr/lib/google-chrome # move this over here
+mv /var/opt/google-chrome-stable /usr/lib/google-chrome-stable # move this over here
 
 # Register path symlink
 # We do this via tmpfiles.d so that it is created by the live system.
 cat >/usr/lib/tmpfiles.d/google-chrome.conf <<EOF
-L  /opt/google-chrome  -  -  -  -  /usr/lib/google-chrome
+L  /opt/google-chrome-stable  -  -  -  -  /usr/lib/google-chrome-stable
 EOF
 
 # No further hack SHOULD be needed since dnf5 does run the script
