@@ -21,11 +21,8 @@ RELEASE="$(rpm -E %fedora)"
 
 systemctl enable podman.socket
 
-echo "working-directory"
-pwd
-
 # install 1Password repo
-./1password.sh
+/ctx/build_files/1password.sh
 
 # install Google Chrome
-./google-chrome.sh
+/ctx/build_files/google-chrome.sh
