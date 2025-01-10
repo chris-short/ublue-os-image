@@ -7,8 +7,8 @@ COPY / /
 
 FROM ghcr.io/ublue-os/${BASE_IMAGE}:${TAG_VERSION}
 
-ARG BASE_IMAGE="bazzite-gnome:stable"
-ARG IMAGE="bazzite-gnome:stable"
+ARG BASE_IMAGE="${BASE_IMAGE}"
+ARG IMAGE="${IMAGE}:${TAG_VERSION}"
 ARG SET_X=""
 
 RUN --mount=type=bind,from=ctx,src=/,dst=/ctx \
